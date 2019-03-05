@@ -878,97 +878,97 @@ while True:
 
     print(cv2.getTrackbarPos('tresh', 'Tello'))
 
-    qr_scanner_value = qr_scanner3()
-    # if (qr_scanner_value[0]):
-    #     last_qrcode = qr_scanner_value[1]
-    #     for_belocity = 0
-    #     left_right_velocity = 0
-    #     up_down_velocity = 0
-    #     yaw_velocity = 0
-    #     rc_update()
-    #     print("RET is True")
-    #     if qr_operator(qr_scanner_value[2], qr_scanner_value[3], qr_scanner_value[4]):
-    #
-    #         value_new_of_front = mission_operation(qr_scanner_value[1], frame, line_tresh, frame_cap)
-    #         now_front = value_new_of_front
-    #         print("now_front from func" + now_front)
-    #
-    #         print("now_front global" + now_front)
-    #
-    #     else:
-    #         print("Start Follow Line Function!!!!!!!!!!!!!!")
-    #         error_line = line_err_detect(frame, line_tresh)
-    #         print("error_line" + str(error_line))
-    #         value_of_line = line_follow(error_line)
-    #         # value_of_line = line_follow(line_err_detect(frame,line_tresh))
-    #         for_back_velocity = int(value_of_line[0])
-    #         print("for_back_velocity" + str(for_back_velocity))
-    #
-    #         left_right_velocity = int(value_of_line[1])
-    #         print("left_right_velocit" + str(left_right_velocity))
-    #
-    #
-    # else:
-    #     print("RET is False")
-    #     hy = cv2.getTrackbarPos('H_Yellow', 'Tello')
-    #     sy = cv2.getTrackbarPos('S_Yellow', 'Tello')
-    #     vy = cv2.getTrackbarPos('V_Yellow', 'Tello')
-    #
-    #     # if color(frame, hy, sy, vy):
-    #     #     stop()
-    #     #     print("got it is Gate")
-    #     #     att_control(700, False)
-    #     #     tello.move_forward(90)
-    #     #     print("move forward")
-    #     #     time.sleep(qr_forward_sleep)
-    #     #     att_control(1000, False)
-    #
-    #     print("Start Follow Line Function!!!!!!!!!!!!!!")
-    #     error_line = line_err_detect(frame, line_tresh)
-    #     print("error_line" + str(error_line))
-    #     value_of_line = line_follow(error_line)
-    #     # value_of_line = line_follow(line_err_detect(frame,line_tresh))
-    #     for_back_velocity = int(value_of_line[0])
-    #     print("for_back_velocity" + str(for_back_velocity))
-    #
-    #     left_right_velocity = int(value_of_line[1])
-    #     print("left_right_velocit" + str(left_right_velocity))
-    #
-    # key = cv2.waitKey(1)
-    #
-    # if key == 27:
-    #     tello.land()
-    #     time.sleep(5)  # escape key
-    #
-    # elif key == 117:  # u key
-    #     up_down_velocity = 50
-    #
-    # elif key == 106:  # j key
-    #     up_down_velocity = -50
-    #
-    # elif key == 119:  # w key
-    #     for_back_velocity = 50
-    #
-    # elif key == 115:  # s key
-    #     for_back_velocity = -50
-    #
-    # elif key == 100:  # d key
-    #     left_right_velocity = 50
-    #
-    # elif key == 97:  # a key
-    #     left_right_velocity = -50
-    #
-    # elif key == 101:  # e key
-    #     yaw_velocity = -50
-    #
-    # elif key == 113:  # q key
-    #     yaw_velocity = 50
-    #
-    # elif key == 102:
-    #
-    #     for_belocity = 0
-    #     left_right_velocity = 0
-    #     up_down_velocity = 0
-    #     yaw_velocity = 0
+    qr_scanner_value = qr_scanner()
+    if (qr_scanner_value[0]):
+        last_qrcode = qr_scanner_value[1]
+        for_belocity = 0
+        left_right_velocity = 0
+        up_down_velocity = 0
+        yaw_velocity = 0
+        rc_update()
+        print("RET is True")
+        if qr_operator(qr_scanner_value[2], qr_scanner_value[3], qr_scanner_value[4]):
+
+            value_new_of_front = mission_operation(qr_scanner_value[1], frame, line_tresh, frame_cap)
+            now_front = value_new_of_front
+            print("now_front from func" + now_front)
+
+            print("now_front global" + now_front)
+
+        else:
+            print("Start Follow Line Function!!!!!!!!!!!!!!")
+            error_line = line_err_detect(frame, line_tresh)
+            print("error_line" + str(error_line))
+            value_of_line = line_follow(error_line)
+            # value_of_line = line_follow(line_err_detect(frame,line_tresh))
+            for_back_velocity = int(value_of_line[0])
+            print("for_back_velocity" + str(for_back_velocity))
+
+            left_right_velocity = int(value_of_line[1])
+            print("left_right_velocit" + str(left_right_velocity))
+
+
+    else:
+        print("RET is False")
+        hy = cv2.getTrackbarPos('H_Yellow', 'Tello')
+        sy = cv2.getTrackbarPos('S_Yellow', 'Tello')
+        vy = cv2.getTrackbarPos('V_Yellow', 'Tello')
+
+        # if color(frame, hy, sy, vy):
+        #     stop()
+        #     print("got it is Gate")
+        #     att_control(700, False)
+        #     tello.move_forward(90)
+        #     print("move forward")
+        #     time.sleep(qr_forward_sleep)
+        #     att_control(1000, False)
+
+        print("Start Follow Line Function!!!!!!!!!!!!!!")
+        error_line = line_err_detect(frame, line_tresh)
+        print("error_line" + str(error_line))
+        value_of_line = line_follow(error_line)
+        # value_of_line = line_follow(line_err_detect(frame,line_tresh))
+        for_back_velocity = int(value_of_line[0])
+        print("for_back_velocity" + str(for_back_velocity))
+
+        left_right_velocity = int(value_of_line[1])
+        print("left_right_velocit" + str(left_right_velocity))
+
+    key = cv2.waitKey(1)
+
+    if key == 27:
+        tello.land()
+        time.sleep(5)  # escape key
+
+    elif key == 117:  # u key
+        up_down_velocity = 50
+
+    elif key == 106:  # j key
+        up_down_velocity = -50
+
+    elif key == 119:  # w key
+        for_back_velocity = 50
+
+    elif key == 115:  # s key
+        for_back_velocity = -50
+
+    elif key == 100:  # d key
+        left_right_velocity = 50
+
+    elif key == 97:  # a key
+        left_right_velocity = -50
+
+    elif key == 101:  # e key
+        yaw_velocity = -50
+
+    elif key == 113:  # q key
+        yaw_velocity = 50
+
+    elif key == 102:
+
+        for_belocity = 0
+        left_right_velocity = 0
+        up_down_velocity = 0
+        yaw_velocity = 0
 
     rc_update()
